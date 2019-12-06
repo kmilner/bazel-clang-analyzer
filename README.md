@@ -75,3 +75,8 @@ The script `run_clang_analyzer.sh` contains an example workflow. Use like this:
 ```
 ./run_clang_analyzer.sh //bazel/targets/...
 ```
+
+## Status
+This has been modified from the original version by cybrown-zoox to make it slightly
+easier to include and use. It fixes a bug in the original and includes some of the
+necessary bits that were not originally included.
