@@ -54,12 +54,12 @@ analyze-build --cdb compile_commands.json -o clang-analysis --html-title "My Rep
 This generates html files in clang-analysis/scan-xxx, which you can serve or
 view with a tool of your choice.
 
-##Gotchas
+## Gotchas
 If you use a bazel externalized crosstool (instead of just one in /usr/bin),
 you'll have to pass in the compiler path to analyze-build using the
 `--use-analyzer` option. In addition, you might have problems with bazel's crazy
 source tree. In my repository, I had to execute `analyze-build` from the bazel
-execution_root:
+`execution_root`:
 
 ```
 REPO_ROOT=$PWD
