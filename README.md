@@ -9,16 +9,10 @@ database](http://clang.llvm.org/docs/JSONCompilationDatabase.html) file. This
 file is useful for many other tools as well, such as `clang-tidy`.
 
 ## Installation and setup
-Place `BUILD`, `generate_compile_command.py`, and
-`generate_compile_commands_json.py` in a suitable folder in your bazel
+Place the full contents of this repo into a suitable folder in your bazel
 workspace. For installation purposes assume they are in `REPO_ROOT/tools/actions`.
 
-The `BUILD` file references `//third_party/bazel:extra_actions_proto_py`. You
-can generate this file by executing `protoc` on
-[this](https://github.com/bazelbuild/bazel/blob/master/src/main/protobuf/extra_actions_base.proto)
-bazel source proto.
-
-You also need the python library
+You will need the python library
 [scan-build](https://github.com/rizsotto/scan-build), which you can install
 with:
 
@@ -27,14 +21,13 @@ pip install scan-build
 ```
 
 Setup is not at all stable. You may run into strange permissions and paths
-issues when executing. Sorry!  You will need to edit most of the files. The
-bazel targets in `BUILD` must match your repo layout, and you must create a rule
-somewhere to make `extra_actions_proto_py` visible to this package. If you don't
+issues when executing. Sorry! If you don't
 use the paths assumed here, you'll have to change the import paths in
 `generate_compile_command.py`. On the other hand,
 `generate_compile_commands_json.py` should work as is. If you use
 `run_clang_analyzer.sh`, you will probably need to change or remove the
-`--use-analyzer` option.
+`--use-analyzer` option depending on what clang you use, and whether you use a
+wrapper script for it.
 
 ## Usage
 Before running static analysis tools, you must generate the compilation commands
