@@ -2,10 +2,7 @@ py_binary(
   name = 'generate_compile_command',
   srcs = [
     'generate_compile_command.py',
-  ],
-  deps = [
-    '//third_party/bazel:extra_actions_proto_py',
-  ],
+  ]
 )
 
 action_listener(

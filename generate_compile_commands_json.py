@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/local/bin/python3
 
 # This reads the _compile_command files :generate_compile_commands_action
 # generates a outputs a compile_commands.json file at the top of the source
@@ -13,6 +13,7 @@ import sys
 import pathlib
 import os.path
 import subprocess
+import json
 
 '''
 Args:
@@ -29,9 +30,9 @@ def _get_command(path, command_directory):
       return None
     return '''{
         "directory": "%s",
-        "command": "%s",
+        "command": %s,
         "file": "%s"
-      },''' % (command_directory, ' '.join(new_command_spl), contents[1])
+      },''' % (command_directory, json.dumps(contents[0]), contents[1])
 
 '''
 Args:

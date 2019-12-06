@@ -1,9 +1,11 @@
+#!/usr/local/bin/python3
+
 # This is the implementation of a Bazel extra_action which genenerates
 # _compile_command files for generate_compile_commands.py to consume.
 
 import sys
 
-import third_party.bazel.protos.extra_actions_base_pb2 as extra_actions_base_pb2
+import extra_actions_base_pb2 as extra_actions_base_pb2
 
 def _get_cpp_command(cpp_compile_info):
   compiler = cpp_compile_info.tool
