@@ -37,7 +37,7 @@ database. Assuming you set up the targets as above, you can do this with:
 # From repository root:
 bazel clean
 bazel build --experimental_action_listener=tools/actions:generate_compile_commands_listener BAZEL_LABELS
-./tools/actions/generate_compile_commands_json.py
+python3 ./tools/actions/generate_compile_commands_json.py
 ```
 
 This creates the compilation database file in the repository root with the name
